@@ -1,0 +1,16 @@
+class Solution {
+    public static boolean isPalindrome(int x) {
+        int plug = x;
+        int reversed = 0;
+        while (plug > 0) {
+            int last = plug % 10;
+            reversed = reversed * 10 + last;
+            plug /= 10;
+        }
+        if (reversed == x)
+        {
+            return true;
+        }
+        else return false;
+    }
+}
