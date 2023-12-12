@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        ArrayList<Integer> ints  = new ArrayList<Integer>();
+        int numSize = 0;
+        for (int i = 1; i < nums.length; i++)
+        {
+            if (nums[i] != val)
+            {
+                ints.add(nums[i]);
+                numSize += 1;
+            }
+        }
+        nums = new int[numSize];
+        for (int i = 0; i < nums.length; i++)
+        {
+            nums[i] = ints.get(i);
+            //System.out.println(nums[i]);
+        }
+        //System.out.println("\n" + numSize);
+        return numSize;
+    }
+}
