@@ -1,0 +1,18 @@
+class Solution {
+    public int maxProduct(int[] nums) {
+        int plug1 = 0;
+        int plug2 = 0;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[j] < nums[i]) {
+                    plug1 = nums[j];
+                    nums[j] = nums[i];
+                    nums[i] = plug1;
+                }
+            }
+        }
+        plug1 = nums[0];
+        plug2 = nums[1];
+        return ((plug1 - 1) * (plug2 - 1));
+    }
+}
